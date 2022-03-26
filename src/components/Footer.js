@@ -1,13 +1,12 @@
-import React from "react"
+import React from "react";
+import { year } from "./vars";
 
-function Footer () {
-    return (
-        <div className="footer" >
-           
-            Privacy Policy|@2022 Highradius Corporation.All rights Reserved
-        </div>
-    )
-
+function Footer() {
+  return (
+    <div className="footer">
+      Privacy Policy|@{year} Highradius Corporation.All rights Reserved
+    </div>
+  );
 }
 
 export default Footer;
