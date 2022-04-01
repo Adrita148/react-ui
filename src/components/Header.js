@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { columns, rows } from "./vars";
+import { columns, rows } from "../services/vars";
 
-export default function Header() {
+export default function Header({ data }) {
+  const [datarow, setdatarow] = useState(rows);
+
   return (
     <div style={{ height: "510px", width: "100%" }}>
       <DataGrid
-        rows={rows}
+        rows={datarow}
         columns={columns}
         checkboxSelection
         disableSelectionOnClick
