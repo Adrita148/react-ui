@@ -1,11 +1,30 @@
 import React from "react";
+import EditPopup from "./Forms/EditPopup";
+import AddPopup from "./Forms/AddPopup";
+import DeletePopup from "./Forms/DeletePopup";
+import AdvanceSearchPopup from "./Forms/AdvanceSearchPopup";
 
 const Popup = (props) => {
-  return (
-    <div className="popup-box">
-      <div className="box">{props.content}</div>
-    </div>
-  );
+  return <>{props.content}</>;
 };
 
-export default Popup;
+const popup = (isOpen, togglePopup, popuptype) => {
+  if (isOpen) {
+    if (popuptype === "EDIT") {
+      return <Popup content={<EditPopup togglePopup={togglePopup} />} />;
+    }
+    if (popuptype === "ADD") {
+      return <Popup content={<AddPopup togglePopup={togglePopup} />} />;
+    }
+    if (popuptype === "DELETE") {
+      return <Popup content={<DeletePopup togglePopup={togglePopup} />} />;
+    }
+    if (popuptype === "ADVANCESEARCH") {
+      return (
+        <Popup content={<AdvanceSearchPopup togglePopup={togglePopup} />} />
+      );
+    }
+  }
+};
+
+export { popup };
