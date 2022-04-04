@@ -56,13 +56,22 @@ const AdvanceSearchPopup = ({ togglePopup }) => {
             className="customer" />
     </div>
     </Grid>
-</Grid>
-          <ButtonGroup variant="outlined" aria-label="outlined button group">
-            <Button type="submit">SEARCH</Button>
-            <Button onClick={togglePopup}>CANCEL</Button>
-          </ButtonGroup>
-        
-      </div>
+
+
+    <Grid item xs={6}>
+    <div>          
+          <Button variant="outlined" aria-label="outlined button group" type="submit">SEARCH</Button>
+    </div>
+    </Grid>
+    <Grid item xs={6}>
+    <div> 
+          <Button variant="outlined" aria-label="outlined button group" onClick={togglePopup}>CANCEL</Button>
+    </div>
+
+      
+    </Grid>
+  </Grid>
+</div>
     </div>
   );
 };

@@ -28,7 +28,7 @@ const Buttons = () => {
         </Button>
       </ButtonGroup>
       <div style={{ display: "flex" , backgroundColor: "white"}}>
-        <TextField id="outlined-basic" label="Search" variant="outlined" />
+        <TextField id="outlined-basic" label="Search Customer ID" variant="outlined" />
         <Button size="medium" variant="text"></Button>
       </div>
 

@@ -4,38 +4,54 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import { TextField } from "@mui/material";
 import Grid from '@mui/material/Grid';
 
-function EditPopup({ togglePopup }) {
+const EditPopup = ({ togglePopup }) => {
   return (
-    <div className="popup-box">
-      <div style={{ height: "30vh", width: "40%" }} className="box">
-        <h1>EDIT</h1>
-        <form action="submit">
-          <div>
-            <TextField
-              id="outlined-password-input"
-              label="Invoice Currency"
-              className="invoice" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div className="popup-box">
+   <div style={{ height: "25vh", width: "60%" }} className="box">
+      <h1>ADD</h1>
+  <Grid 
+  container
+  rowSpacing={1}
+  columnSpacing={{xs:1, sm:2, md:3}}
+  style={{width: "1000px"}}
+>
+  <Grid item xs={6}>
+  <div>
+  <TextField
+          id="invoice_curr"
+          label="Invoice Currency"
+          variant="outlined"
+          className="customer"
+          fullWidth />
+  </div>
+  </Grid>
+  <Grid item xs={6}>
+  <div>
+  <TextField
+          id="payment_terms"
+          label="Customer Payment Terms"
+          variant="outlined"
+          className="customer"
+          fullWidth
+           />
+  </div>
+  </Grid>
+  <Grid item xs={6}>
+  <div>
+    <Button variant="outlined" onClick={togglePopup}>EDIT</Button>
+  </div> 
+  </Grid>
+  
+  <Grid item xs={6}>
+  <div>
+    <Button variant="outlined" onClick={togglePopup}>CANCEL</Button>
+  </div> 
+  </Grid>
+</Grid>
 
-            <TextField
-              id="outlined-basic"
-              label="Customer Payment Terms"
-              variant="outlined"
-              className="customer" />
-          </div>
-        
-          <ButtonGroup >
-        
-           <Button  variant="outlined" aria-label="outlined button group"  type="submit" className="edit-popup">EDIT</Button>
-          
-            <Button  variant="outlined" aria-label="outlined button group"  onClick={togglePopup} >CANCEL</Button>
-
-          </ButtonGroup>
-        
-        </form>
-      </div>
-    </div>
+   </div>
+  </div>
   );
-}
+};
 
 export default EditPopup;
