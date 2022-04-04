@@ -2,28 +2,66 @@ import React from "react";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import { TextField } from "@mui/material";
+import Grid from '@mui/material/Grid';
+
 
 const AdvanceSearchPopup = ({ togglePopup }) => {
   return (
     <div className="popup-box">
-      <div style={{ height: "30vh", width: "50%" }} className="box">
+      <div style={{ height: "40vh", width: "58%" }} className="box">
         <h1>ADVANCED SEARCH</h1>
-        <form action="submit">
-          <TextField
-            id="outlined-basic"
-            label="Invoice Currency"
+        <Grid 
+    container
+    rowSpacing={4}
+    columnSpacing={{xs:1, sm:2, md:3}}
+    style={{width: "1000px"}}
+>
+    <Grid item xs={6}>
+    <div>
+    <TextField
+            id="doc_id"
+            label="Document-Id"
             variant="outlined"
-          />
-          <TextField
-            id="outlined-basic"
-            label="Customer Payment Terms"
+            fullWidth
+            className="customer" />
+    </div>
+    </Grid>
+    <Grid item xs={6}>
+    <div>
+    <TextField
+            id="customer_no"
+            label="Customer Number"
             variant="outlined"
-          />
+            fullWidth
+            className="customer" />
+    </div>
+    </Grid>
+    <Grid item xs={6}>
+    <div>
+    <TextField
+            id="Invoice_no"
+            label="Invoice Number"
+            variant="outlined"
+            fullWidth
+            className="customer" />
+    </div>
+    </Grid>
+    <Grid item xs={6}>
+    <div>
+    <TextField
+            id="business_year"
+            label="Business Year"
+            variant="outlined"
+            fullWidth
+            className="customer" />
+    </div>
+    </Grid>
+</Grid>
           <ButtonGroup variant="outlined" aria-label="outlined button group">
             <Button type="submit">SEARCH</Button>
             <Button onClick={togglePopup}>CANCEL</Button>
           </ButtonGroup>
-        </form>
+        
       </div>
     </div>
   );

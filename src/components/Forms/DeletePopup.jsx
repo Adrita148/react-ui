@@ -6,24 +6,19 @@ import { TextField } from "@mui/material";
 const DeletePopup = ({ togglePopup }) => {
   return (
     <div className="popup-box">
-      <div style={{ height: "30vh", width: "50%" }} className="box">
+      <div style={{ height: "40vh", width: "50%" }} className="box">
         <h1>DELETE</h1>
-        <form action="submit">
-          <TextField
-            id="outlined-basic"
-            label="Invoice Currency"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-basic"
-            label="Customer Payment Terms"
-            variant="outlined"
-          />
+        
+        <div className="delete-pop"><h1>Delete Records?</h1></div>
+        <div className="delete-pop"><h2>Are you sure you want to delete the record(s)?</h2></div>
+        
+
+
           <ButtonGroup variant="outlined" aria-label="outlined button group">
             <Button type="submit">DELETE</Button>
             <Button onClick={togglePopup}>CANCEL</Button>
           </ButtonGroup>
-        </form>
+        
       </div>
     </div>
   );

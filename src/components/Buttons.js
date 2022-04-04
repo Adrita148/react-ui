@@ -21,17 +21,15 @@ const Buttons = () => {
   return (
     <div className="button">
       <ButtonGroup variant="outlined" aria-label="outlined button group">
-        <Button onClick={togglePopup}>PREDICT</Button>
+        <Button variant="contained">PREDICT</Button>
         <Button>ANALYTICS VIEW</Button>
         <Button onClick={() => togglePopup("ADVANCESEARCH")}>
           ADVANCE SEARCH
         </Button>
       </ButtonGroup>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex" , backgroundColor: "white"}}>
         <TextField id="outlined-basic" label="Search" variant="outlined" />
-        <Button size="small" variant="text">
-          🔍
-        </Button>
+        <Button size="medium" variant="text"></Button>
       </div>
 
       {popup(isOpen, togglePopup, popuptype)}
@@ -44,6 +42,7 @@ const Buttons = () => {
         <Button onClick={() => togglePopup("ADD")}>ADD</Button>
         <Button onClick={() => togglePopup("EDIT")}>EDIT</Button>
         <Button onClick={() => togglePopup("DELETE")}>DELETE</Button>
+       
       </ButtonGroup>
     </div>
   );

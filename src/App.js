@@ -16,7 +16,7 @@ function App() {
       <Headlogo />
       <Buttons />
       <div className="App">
-        <Header data={data} />
+        <Header />
       </div>
       <Footer />
     </div>
